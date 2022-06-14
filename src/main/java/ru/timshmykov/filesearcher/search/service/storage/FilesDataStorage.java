@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.timshmykov.filesearcher.FilesDataRepository;
 import ru.timshmykov.filesearcher.model.FilesData;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -19,6 +18,5 @@ public class FilesDataStorage {
     @Transactional
     public void saveData(List<FilesData> filesData) {
         filesDataRepository.saveAll(filesData);
-
     }
 }

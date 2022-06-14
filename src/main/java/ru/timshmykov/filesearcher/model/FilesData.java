@@ -15,12 +15,11 @@ public class FilesData {
 //    @GeneratedValue(strategy = GenerationType.AUTO)
     @GeneratedValue(generator = "files_data_gen", strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = "files_data_gen", sequenceName = "files_data_id_seq", allocationSize = 1)
-    @OneToOne(mappedBy = "parent_id", cascade = CascadeType.ALL)
     private Long id;
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
+    @ManyToOne
+    @JoinColumn(name = "parent_id")
     private FilesData parent;
 
     public FilesData(String name, FilesData parent) {

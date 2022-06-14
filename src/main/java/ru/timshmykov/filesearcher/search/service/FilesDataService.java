@@ -24,7 +24,6 @@ public class FilesDataService {
                 for (File file : dirFiles) {
                     List<FilesData> kids = searchFile(file, filesData);
                     fileList.addAll(kids);
-
                 }
             }
         }
